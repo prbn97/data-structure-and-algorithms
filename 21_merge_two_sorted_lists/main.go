@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // https://leetcode.com/problems/merge-two-sorted-lists/
 func main() {
 	list1 := &ListNode{Val: 1}
@@ -54,12 +52,5 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 	if list2 != nil {
 		current.Next = list2
 	}
-
-	for head.Next != nil {
-		fmt.Println(head.Next.Val)
-		head.Next = head.Next.Next
-
-	}
-	// Retornar a lista resultante sem o nó cabeça
 	return head.Next
 }
