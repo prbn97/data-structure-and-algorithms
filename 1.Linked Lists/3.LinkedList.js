@@ -119,6 +119,23 @@ class LinkedList {
         }
         return this;
     }
+    findMiddleNode() {
+        if (this.length < 1) return null;
+        if (this.length === 1) return this.head;
+        if (this.length === 2) return this.tail;
+
+        let index = Math.ceil(this.length / 2);
+        if (this.length % 2 === 0) { // if even.
+            index++;
+        }
+        // iterate the list with the result to return the middle node.
+        let middleNode = this.head;
+        for (let i = 1; i < index; i++) {
+            middleNode = middleNode.next;
+        }
+
+        return middleNode;
+    }
 }
 
 let linkedList = new LinkedList(11);
